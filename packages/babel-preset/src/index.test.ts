@@ -27,7 +27,7 @@ describe('preset', () => {
       }),
     ).toMatchInlineSnapshot(`
       "import * as React from "react";
-      const SvgComponent = () => <svg foo="bar" x={y} />;
+      const SvgComponent = () => <svg foo="bar" x="{y}" />;
       export default SvgComponent;"
     `)
   })
@@ -146,7 +146,7 @@ describe('preset', () => {
       }),
     ).toMatchInlineSnapshot(`
       "import * as React from "react";
-      const SvgComponent = () => <svg a="black" b={props.white} />;
+      const SvgComponent = () => <svg a="black" b="{props.white}" />;
       export default SvgComponent;"
     `)
   })

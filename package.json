@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "lint": "eslint . && prettier --check .",
     "release": "lerna publish --conventional-commits && conventional-github-releaser --preset angular",
-    "test": "jest --runInBand -u"
+    "test": "jest --runInBand"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",

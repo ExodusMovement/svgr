@@ -243,7 +243,7 @@ export const getVariables = ({
     ctx.exportIdentifier = Memo
   }
 
-  if (opts.state.caller?.previousExport || opts.exportType === 'named') {
+  if (opts.exportType === 'named') {
     if (!opts.namedExport) {
       throw new Error(`"namedExport" not specified`)
     }
@@ -252,14 +252,6 @@ export const getVariables = ({
         t.exportSpecifier(ctx.exportIdentifier, t.identifier(opts.namedExport)),
       ]),
     )
-    if (opts.state.caller?.previousExport) {
-      const previousExportAst = template.ast(opts.state.caller.previousExport)
-      exports.push(
-        ...(Array.isArray(previousExportAst)
-          ? previousExportAst
-          : [previousExportAst]),
-      )
-    }
   } else {
     exports.push(t.exportDefaultDeclaration(ctx.exportIdentifier))
   }

@@ -53,13 +53,10 @@ const plugin: PluginImpl<Options> = (options = {}) => {
 
       const load = fs.readFileSync(id, 'utf8')
 
-      const previousExport = EXPORT_REGEX.test(data) ? data : null
-
       const jsCode = await transform(load, options, {
         filePath: id,
         caller: {
           name: '@svgr/rollup',
-          previousExport,
           defaultPlugins: [svgo, jsx],
         },
       })

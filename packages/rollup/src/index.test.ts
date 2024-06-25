@@ -28,14 +28,4 @@ describe('rollup loader', () => {
     const code = await compile([svgr({ babel: false })])
     expect(getCode(code)).toMatchSnapshot()
   })
-
-  it('should convert file with previousExport of image plugin', async () => {
-    const code = await compile([image(), svgr({ babel: false })])
-    expect(getCode(code)).toMatchSnapshot()
-  })
-
-  it('should convert file with previousExport of url plugin', async () => {
-    const code = await compile([url(), svgr({ babel: false })])
-    expect(getCode(code)).toMatchSnapshot()
-  })
 })

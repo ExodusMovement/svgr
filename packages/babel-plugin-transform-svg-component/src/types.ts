@@ -23,7 +23,7 @@ export interface Template {
 
 interface State {
   componentName: string
-  caller?: { previousExport?: string | null }
+  caller?: {}
 }
 
 export interface JSXRuntimeImport {

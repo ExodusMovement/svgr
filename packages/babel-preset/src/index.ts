@@ -27,23 +27,17 @@ export interface Options extends TransformOptions {
   replaceAttrValues?: { [key: string]: string }
 }
 
-const getAttributeValue = (value: string) => {
-  const literal =
-    typeof value === 'string' && value.startsWith('{') && value.endsWith('}')
-  return { value: literal ? value.slice(1, -1) : value, literal }
-}
-
 const propsToAttributes = (props: { [key: string]: string }): Attribute[] => {
   return Object.keys(props).map((name) => {
-    const { literal, value } = getAttributeValue(props[name])
-    return { name, literal, value }
+    const value = props[name]
+    return { name, value }
   })
 }
 
 function replaceMapToValues(replaceMap: { [key: string]: string }): Value[] {
   return Object.keys(replaceMap).map((value) => {
-    const { literal, value: newValue } = getAttributeValue(replaceMap[value])
-    return { value, newValue, literal }
+    const newValue = replaceMap[value]
+    return { value, newValue }
   })
 }
 

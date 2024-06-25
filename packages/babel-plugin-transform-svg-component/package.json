@@ -1,5 +1,5 @@
 {
-  "name": "@svgr/babel-plugin-transform-svg-component",
+  "name": "@exodus/svgr-babel-plugin-transform-svg-component",
   "description": "Transform SVG into component",
   "version": "6.5.1",
   "main": "./dist/index.js",
@@ -11,7 +11,7 @@
     },
     "./package.json": "./package.json"
   },
-  "repository": "https://github.com/gregberge/svgr/tree/main/packages/babel-plugin-transform-svg-component",
+  "repository": "https://github.com/exodusmovement/svgr/tree/main/packages/babel-plugin-transform-svg-component",
   "author": "Greg Bergé <berge.greg@gmail.com>",
   "publishConfig": {
     "access": "public"

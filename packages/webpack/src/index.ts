@@ -64,38 +64,15 @@ function svgrLoader(
 
   const options = this.getOptions()
 
-  const previousExport = (() => {
-    if (contents.startsWith('export ')) return contents
-    const exportMatches = contents.match(/^module.exports\s*=\s*(.*)/)
-    return exportMatches ? `export default ${exportMatches[1]}` : null
-  })()
-
   const state = {
     caller: {
       name: '@svgr/webpack',
-      previousExport,
       defaultPlugins: [svgo, jsx],
     },
     filePath: normalize(this.resourcePath),
   }
 
-  if (!previousExport) {
-    tranformSvg(contents, options, state, callback)
-  } else {
-    this.fs.readFile(this.resourcePath, (err, result) => {
-      if (err) {
-        callback(err)
-        return
-      }
-      tranformSvg(String(result), options, state, (err, content) => {
-        if (err) {
-          callback(err)
-          return
-        }
-        callback(null, content)
-      })
-    })
-  }
+  tranformSvg(contents, options, state, callback)
 }
 
 export default svgrLoader

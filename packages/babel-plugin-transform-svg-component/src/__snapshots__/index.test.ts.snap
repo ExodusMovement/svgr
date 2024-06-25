@@ -112,21 +112,6 @@ const Memo = memo(SvgComponent);
 export default Memo;"
 `;
 
-exports[`plugin javascript with "namedExport" and "exportType" option and without "previousExport" state exports via named export 1`] = `
-"import * as React from "react";
-const SvgComponent = () => <svg><g /></svg>;
-export { SvgComponent as ReactComponent };"
-`;
-
-exports[`plugin javascript with "namedExport" option and "previousExport" state has custom named export 1`] = `
-"import * as React from "react";
-const SvgComponent = () => <svg><g /></svg>;
-export { SvgComponent as Component };
-var img = new Image();
-img.src = '...';
-export default img;"
-`;
-
 exports[`plugin javascript with "native" and "expandProps" option adds import from "react-native-svg" and adds props 1`] = `
 "import * as React from "react";
 import Svg from "react-native-svg";
@@ -346,21 +331,6 @@ import { memo } from "react";
 const SvgComponent = () => <svg><g /></svg>;
 const Memo = memo(SvgComponent);
 export default Memo;"
-`;
-
-exports[`plugin typescript with "namedExport" and "exportType" option and without "previousExport" state exports via named export 1`] = `
-"import * as React from "react";
-const SvgComponent = () => <svg><g /></svg>;
-export { SvgComponent as ReactComponent };"
-`;
-
-exports[`plugin typescript with "namedExport" option and "previousExport" state has custom named export 1`] = `
-"import * as React from "react";
-const SvgComponent = () => <svg><g /></svg>;
-export { SvgComponent as Component };
-var img = new Image();
-img.src = '...';
-export default img;"
 `;
 
 exports[`plugin typescript with "native" and "expandProps" option adds import from "react-native-svg" and adds props 1`] = `

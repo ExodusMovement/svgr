@@ -8,7 +8,6 @@ export interface State {
   componentName: string
   caller?: {
     name?: string
-    previousExport?: string | null
     defaultPlugins?: ConfigPlugin[]
   }
 }

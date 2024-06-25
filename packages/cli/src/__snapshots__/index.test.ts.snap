@@ -425,7 +425,7 @@ const SvgFile = (props) => (
     width={48}
     height={1}
     xmlns="http://www.w3.org/2000/svg"
-    hidden="{true}"
+    hidden={true}
     id="hello"
     {...props}
   >

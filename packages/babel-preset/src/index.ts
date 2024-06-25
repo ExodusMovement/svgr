@@ -13,7 +13,7 @@ import svgEmDimensions from '@svgr/babel-plugin-svg-em-dimensions'
 import transformReactNativeSVG from '@svgr/babel-plugin-transform-react-native-svg'
 import transformSvgComponent, {
   Options as TransformOptions,
-} from '@svgr/babel-plugin-transform-svg-component'
+} from '@exodus/svgr-babel-plugin-transform-svg-component'
 
 export interface Options extends TransformOptions {
   ref?: boolean
